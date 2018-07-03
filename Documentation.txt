@@ -1,0 +1,25 @@
+Class Product
+>Name
+>Description
+>Category
+>Price ( as double)
+>Reviews
+>Picture (if using applet)
+>Colour and Size ( depending on product)
+>Quantity
+>isAvailable (as boolean)
+
+Class Cart
+>Products
+>Remove from the cart
+>Quantity
+>checkout and proceed to payment
+>Price tax and shipping
+>Shipping address
+>Credit card info
+
+Class productSellor
+>Name
+>Company
+>Location
+>Other Products
