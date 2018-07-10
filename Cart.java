@@ -13,10 +13,15 @@ public class Cart
 
 
   //Constructor of class cart.
-  public Cart()
+  public Cart(String newProductName, String newShippingAddress, int newQuantity)
 {
+  productName = newProductName;     //assigning the name of the product.
+    shippingAddress = newShippingAddress;       //      Update the shipping address
+    quantity = newQuantity;                 //Set the number of quantities for user to buy.
+
   transactionSuccessful = false;
 }
+
 
   
 
