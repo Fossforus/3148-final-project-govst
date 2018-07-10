@@ -23,6 +23,18 @@ public class Cart
 }
 
 
+  public void setPrice(double newPrice,double newShippingPrice,double newTax){
+  price=newPrice;
+  shippingPrice=newShippingPrice;
+  tax=newTax;
+}
   
+  public void setCreditCard(double newCreditNumber,int newExpiration,int newCvv){
+  creditCardNumber=newCreditNumber;
+  expirationMonthandYear=newExpiration;
+    cvv=newCvv;
+}
 
   
+
+  }
