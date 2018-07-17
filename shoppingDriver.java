@@ -7,11 +7,17 @@ public class shoppingDriver{
     //This is the driver class the collobarates all the other class.
     
     public static void main(String[] args){
+        Scanner Scan = new Scanner(System.in);
+        
+        int quantity;
+        
+        
+        
         Product p1 = new Product("Gillette Fusion Manual Razor","Gillette Fusion razor blades feature advanced 5-blade technology\n" +
 "Gillette Fusion razor blades are spaced closer together than Mach3 to help reduce pressure for a close\n" +
 "Gillette Fusion's Flexible Comfort Guard features microfins that follow the contours of your face\n" +
 "Gillette Fusion razor blades feature a precision beard trimmer for those tricky spots like sideburns\n" +
-"Gillette Fusion razor blades have a Indicator Lubrication Strip that fades to white.", "Men's Razor and 5 Blades", 8.97, 3,"Gillete","Beauty and personal Care");
+"Gillette Fusion razor blades have a Indicator Lubrication Strip that fades to white.", "Men's Razor and 5 Blades", 8.97, 1,"Gillete","Beauty and personal Care");
        
         System.out.println("Product Name : " + p1.getName() + "\n");
         System.out.println("Desciption : " + p1.getDescription() + "\n");
@@ -20,14 +26,19 @@ public class shoppingDriver{
         System.out.println("Quantity : " + p1.getQuantity() + "\n");
         System.out.println("Seller : " + p1.getSellerName());
         System.out.println("Category : " + p1.getCategory());
-            
-        Scanner Scan = new Scanner(System.in);
         
         System.out.print("Enter your shipping address : ");
         
         String shippingAddress;
         
         shippingAddress = Scan.nextLine();
+        
+        System.err.print("Enter the number of quantity you need : " );
+        
+        quantity = Scan.nextInt();
+        
+         p1.setQuantity(quantity);
+        
         
         Cart c1 = new Cart(p1.getName(),shippingAddress, p1.getQuantity(), p1.getPrice());
         
