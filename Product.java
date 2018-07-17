@@ -5,12 +5,14 @@ public class Product {
 	protected int quantity;
 	protected String aSellerName;
 	
-public Product(String aName, String aDescription, String aSize, double aPrice, int aQuantity) {
+public Product(String aName, String aDescription, String aSize, double aPrice, int aQuantity, String aSellerName, String aCategory) {
 	name = aName;
 	description = aDescription;
 	size = aSize;
 	price = aPrice;
 	quantity = aQuantity;
+	SellerName = aSellerName;
+	category = aCategory;
 	
 }
 	
