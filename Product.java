@@ -1,3 +1,4 @@
+// Code written by Fayzulla and Walter
 public class Product {
 	protected String name, description, size;
 	protected double price;
