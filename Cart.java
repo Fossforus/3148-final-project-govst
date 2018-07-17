@@ -13,12 +13,12 @@ public class Cart
 
 
   //Constructor of class cart.
-  public Cart(String newProductName, String newShippingAddress, int newQuantity)
+  public Cart(String newProductName, String newShippingAddress, int newQuantity, double newPrice)
 {
   productName = newProductName;     //assigning the name of the product.
     shippingAddress = newShippingAddress;       //      Update the shipping address
     quantity = newQuantity;                 //Set the number of quantities for user to buy.
-
+    price = newPrice;
   transactionSuccessful = false;
 }
 
@@ -35,6 +35,21 @@ public class Cart
     cvv=newCvv;
 }
 
-  
+public String getName(){
+    return productName;
+}  
 
-  }
+public String getShippingAdress(){
+    return shippingAddress;
+}
+
+public double finalPrice(){
+    //Shipping cost is $2.99
+    //Tax is 10%
+    finalPrice = (price * quantity);
+    finalPrice = finalPrice + (finalPrice * 0.10) + 2.99;
+    
+    return finalPrice;
+}
+
+}
