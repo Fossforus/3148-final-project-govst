@@ -11,13 +11,15 @@ public class shoppingDriver{
 "Gillette Fusion razor blades are spaced closer together than Mach3 to help reduce pressure for a close\n" +
 "Gillette Fusion's Flexible Comfort Guard features microfins that follow the contours of your face\n" +
 "Gillette Fusion razor blades feature a precision beard trimmer for those tricky spots like sideburns\n" +
-"Gillette Fusion razor blades have a Indicator Lubrication Strip that fades to white.", "Men's Razor and 5 Blades", 8.97, 3);
+"Gillette Fusion razor blades have a Indicator Lubrication Strip that fades to white.", "Men's Razor and 5 Blades", 8.97, 3,"Gillete","Beauty and personal Care");
        
         System.out.println("Product Name : " + p1.getName() + "\n");
         System.out.println("Desciption : " + p1.getDescription() + "\n");
         System.out.println("Size : " + p1.getSize() + "\n");
         System.out.println("Price : $" + p1.getPrice() + "\n");
         System.out.println("Quantity : " + p1.getQuantity() + "\n");
+        System.out.println("Seller : " + p1.getSellerName());
+        System.out.println("Category : " + p1.getCategory());
             
         Scanner Scan = new Scanner(System.in);
         
