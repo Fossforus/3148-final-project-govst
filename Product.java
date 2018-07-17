@@ -1,6 +1,6 @@
 // Code written by Fayzulla and Walter
 public class Product {
-	protected String name, description, size, sellerName;
+	protected String name, description, size, SellerName, category;
 	protected double price;
 	protected int quantity;
 	protected String aSellerName;
@@ -11,7 +11,7 @@ public Product(String aName, String aDescription, String aSize, double aPrice, i
 	size = aSize;
 	price = aPrice;
 	quantity = aQuantity;
-	sellerName = aSellerName;
+	
 }
 	
 	public String getName () {
@@ -47,7 +47,14 @@ public Product(String aName, String aDescription, String aSize, double aPrice, i
 	public void setQuantity(int aQuantity) {
 		quantity = aQuantity;
 	}
-	public String getsellerName () {
-		return sellerName;
+	public String getSellerName () {
+		return SellerName;
+	}
+	public String getCategory () {
+		return category;
+	}
+	public void setCategory(String aCategory) {
+		category = aCategory;
 	}
 }
+	
