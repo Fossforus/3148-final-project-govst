@@ -12,7 +12,7 @@ public class MainDriver {
 		Scanner scan = new Scanner(System.in);
 	//stores the users choice for category
 			int choice = 1;
-			
+			boolean correctChoice = false;
 			
 			System.out.println("Here are the categories avaliable: ");
 			System.out.println("#1) Electronics");
@@ -25,31 +25,48 @@ public class MainDriver {
 			System.out.println("(or enter 0 to exit)");
 			
 			
-			choice = scan.nextInt();	
-			//Switch statement that will show the user products based on category
+			choice = scan.nextInt();
+                        
+                        
+                        /*while (!(Integer.toString(choice).matches("[0-9]+"))) {
+                          System.out.printf("\"%s\" is not a valid number.\n");
+                        }*/
 			
+
+                        //Switch statement that will show the user products based on category
+			while(correctChoice == false){
 			switch (choice) {
 				
 				case 0: Goodbye();
 				
 					break;
 				case 1: System.out.println("Electronics");
-				
+                                        correctChoice = true;
 					break;
 				case 2: System.out.println("Clothing");
 					Clothing(); //main example for how
 								//this will work
+                                        correctChoice = true;
 					break;
 				case 3: System.out.println("Exercise");
-				
+                                        correctChoice = true;
 					break;
 				case 4: System.out.println("Outdoor");
-				
+                                        correctChoice = true;
 					break;
 				case 5: System.out.println("Kitchen");
+                                        correctChoice = true;
 					break;
+                                default: System.err.println("Invalid choice please try again");
+                                        correctChoice = false;
+                                        
+                                        System.out.println("Enter the number of the corresponding category you would like to explore: ");
+                                        System.out.println("(or enter 0 to exit)");
+					choice = scan.nextInt();	
+			
 				
 			}
+                        }
 	}
 		//exit screen
 	public static void Goodbye(){
