@@ -54,7 +54,7 @@ public class MainDriver {
 					
 				case 1: System.out.println("Electronics");
                     correctChoice = true;
-					//Electronics();
+					Electronics();
 					break;
 					
 				case 2: System.out.println("Clothing");
@@ -228,4 +228,32 @@ public class MainDriver {
 			Continue();
 			}
 		}		
+
+        //Display objects and thier names
+	//Instantiates all of the Clothing-Product objects
+	public static void Electronics() {
+		
+		//Instantiate each new product so it is available to be called
+		Product p1 = new Product("LG 55UK6300PUE 65-Inch 4K Ultra HD Smart LED TV (2018 Model)",
+			"Dimensions (Wx H x D): TV without stand 49.1\" x 28.7\" x 3.5\", TV with stand: 49.1\" x 30.9\" x 9.1\" \n" +
+			"Inputs: 3 HDMI, 2 USB, 1 RF, 1 Composite in shared with component, 1 Ethernet, 1 Optical and Audio Return Channel Support via HDMI.\n ", "65 Inches", 846.99, 1,"LG ","Electronics");
+		Product p2 = new Product("Samsung Galaxy S9+ Unlocked",
+			"Super Speed Dual Pixel Camera with Rear Dual Camera\n" +
+                        "Infinity Display: edge-to-edge immersive screen, enhancing your entertainment experience" +
+			" Internal Memory 64 GB. Expandable Storage up to 400GB \n", "Midnight Black", 
+			819.12, 1,"Samsung","Electronics");
+		Product p3 = new Product("Acer Predator Helios 300 Gaming Laptop" , "15.6\" Full HD IPS, Intel i7-7700HQ CPU, 16GB DDR4 RAM, 256GB SSD, GeForce GTX 1060-6GB, VR Ready, Red Backlit KB, Metal Chassis, Windows 10 64-bit, G3-571-77QK" +
+			"Up to 7-hours of battery life \n", "15.6", 1049.00, 1,"Acer","Electronics");
+		Product p4 = new Product("Canon EOS Rebel T6 Digital SLR Camera with 18-55mm EF-S f/3.5-5.6 IS II Lens" , " 58mm Wide Angle Lens + 2x Telephoto Lens + Flash + 48GB SD Memory Card + UV Filter Kit + Tripod + Full Accessory Bundle" +
+			"Transcend 32GB SDHC Class 10 Flash Memory Card\n", "16/32/48GB", 298.99, 1,
+			"Canon","Electronic");
+		Product p5 = new Product("HP LaserJet Pro M402n Monochrome Printer, Amazon Dash Replenishment ready (C5F93A)" , 
+			"This printer is Ethernet (wired networking) or USB only.\n", "Regular",
+			209.9 , 1," HP  ","Electronic");
+		
+		//Calls OptionMenu and passes each newly instantiated object so that users can see more details
+		OptionsMenu(p1, p2, p3, p4, p5);
+		
+		
+	}
 }
