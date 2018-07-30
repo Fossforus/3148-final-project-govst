@@ -2,14 +2,15 @@ import java.util.Scanner;
 import java.text.DecimalFormat;
 //Cheap Mart 
 //Java 3148 Final Project
-
 public class MainDriver {
 	
-	
+	// setting up a global variable for cart array
+       
+        
 	public static void main(String[] args) {
 		//Generic greetings and then directs the user to the main menu/DIRectory
 		System.out.println("Hello and welcome to Cheap Mart!");
-		dir();
+                dir();
 		
 	}
 	//method of menu/DIRectory 
@@ -19,8 +20,8 @@ public class MainDriver {
 			
 			//stores the users choice for category
 			int choice = 1;
-			
-			//error checking variable for switch input
+
+                        //error checking variable for switch input
 			boolean correctChoice = false;
 			
 			//Displays all of the categories that can be explored
@@ -30,17 +31,14 @@ public class MainDriver {
 			System.out.println("3.) Exercise");
 			System.out.println("4.) Outdoor");
 			System.out.println("5.) Kitchen \n");
-			
+                        
+                        			
 			//Instructions for user on how to navigate program
 			System.out.println("Enter the number of the corresponding category you would like to explore: ");
 			System.out.println("(or enter 0 to exit)");
 			
 			choice = scan.nextInt();	
 			
-			//possible alternative to while loop already in place
-			/*while (!(Integer.toString(choice).matches("[0-9]+"))) {
-            System.out.printf("\"%s\" is not a valid number.\n");
-            }*/
 			
 			//Looks to go infinite when user tries to exit after a purchase or chooses option 0
 			//While loop for error handling
@@ -79,6 +77,8 @@ public class MainDriver {
 					Kitchen();
 					
 					break;
+                                
+                                        
                 default: System.err.println("Invalid choice please try again");
                     correctChoice = false;
 					dir();
@@ -181,21 +181,61 @@ public class MainDriver {
                 System.out.println("Category : " + p1.getCategory());
                 
                 while(correctAnswer != true){
-                    scan.nextLine();
                     System.out.print("Do you want to buy this product? (Enter 1 to continue or enter 2 to go back to main menu) : ");
                     buyProduct = scan.nextInt();
                     
                     if(buyProduct == 1){
-                         System.err.print("Enter the number of quantity you need : " );
+                         System.out.print("Enter the number of quantity you need : " );
         
                          quantity = scan.nextInt();
         
                           p1.setQuantity(quantity);
         
-        
-                          Cart c1 = new Cart(p1.getName(),"none", p1.getQuantity(), p1.getPrice());
+                           System.out.println("\n\nName of product  : " + p1.getName());
+                           // System.out.println("Shipping Address : " + c1.getShippingAdress());
+                            System.out.println("=============================================");
+                            System.out.println("Quantity : " + p1.getQuantity());
+                            System.out.println("Price : " + p1.getPrice());
+                            System.out.println("Shipping Cost : $3");
+                            System.out.println("Tax : 10%");
+                            System.err.println("---------------------------------------------");
+
+                            
+                          double creditcard;
+                          System.out.println("Enter your Debit card number : ");
+                          
+                          creditcard = scan.nextDouble();
+                          
+                          int ccExpiration; //Credit card expiration
+                          System.out.println("Enter the expiration (MMYY) : ");
+                          
+                          ccExpiration = scan.nextInt();
+                          
+                          System.out.println("Enter CVV code on the back of the card : ");
+                          int cvv = scan.nextInt(); 
+                          
+                          String shippingAddress;
+                          
+                          System.out.println("Enter your delivery Address");
+                          scan.nextLine();
+                          shippingAddress = scan.nextLine();
+                          
+                          Cart c1 = new Cart(p1.getName(),shippingAddress, p1.getQuantity(), p1.getPrice(), creditcard , ccExpiration, cvv);
+                          
+                            // Round the output to two decimal places
+                          DecimalFormat fmt = new DecimalFormat("0.##");
+                            System.out.println("---------------------------------------------");
+                            System.out.println("Final amount due : $" + fmt.format(c1.finalPrice()));
+                            System.out.println("Credit Card number : " + c1.getCreditCard());
+                            System.out.println("Expiration MMYY : " + c1.getExpiration());
+                            System.out.println("CVV : " + c1.getCVV());
+                            System.out.println("Delivery Address : " + shippingAddress);
+                            System.out.println("---------------------------------------------");
+                          
+                            //Calls continue method to ask the user if they would like to continue shopping after a purchase
+                                    Continue();
+                          
                           correctAnswer = true;
-                          System.err.println(correctAnswer + " in yes");
                     } 
                     else if(buyProduct == 2){
                         //Return to main menu
@@ -203,34 +243,11 @@ public class MainDriver {
                         correctAnswer = true;
                     }
                     else{
-                        System.err.println("Something went wrong please try again.\n");
-                       // correctAnswer = false;
+                        System.out.println("Something went wrong please try again.\n");
+                        correctAnswer = false;
                     }
                 }
-                
-                System.out.print("Enter your shipping address : ");
-        
-        /*String shippingAddress;
-        
-        shippingAddress = scan.nextLine();
-        
-       
-        System.out.println("\n\nName of product in cart : " + c1.getName());
-        System.out.println("Shipping Address : " + c1.getShippingAdress());
-        System.out.println("=============================================");
-        System.out.println("Quantity : " + p1.getQuantity());
-        System.out.println("Price : " + p1.getPrice());
-        System.out.println("Shipping Cost : $3");
-        System.out.println("Tax : 10%");
-        System.err.println("---------------------------------------------");
-        
-        // Round the output to two decimal places
-      DecimalFormat fmt = new DecimalFormat("0.##");
-        System.err.println("Final amount due : $" + fmt.format(c1.finalPrice()));
-        System.err.println("---------------------------------------------");
-	*/
-        //Calls continue method to ask the user if they would like to continue shopping after a purchase
-		Continue();
+               
 	}
 	
 	//Method for asking the user if they would like to continue shopping after a purchase
@@ -348,4 +365,5 @@ public class MainDriver {
 		OptionsMenu(p1, p2, p3, p4, p5);
 	
         }
+        
 }
