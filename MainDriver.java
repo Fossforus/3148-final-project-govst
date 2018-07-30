@@ -66,17 +66,17 @@ public class MainDriver {
 					
 				case 3: System.out.println("Exercise");
                     correctChoice = true;
-					//Exercise();
+					Exercise();
 					break;
 					
 				case 4: System.out.println("Outdoor");
                     correctChoice = true;
-					//Outdoor();
+					Outdoor();
 					break;
 					
 				case 5: System.out.println("Kitchen");
                     correctChoice = true;
-					//Kitchen();
+					Kitchen();
 					
 					break;
                 default: System.err.println("Invalid choice please try again");
@@ -256,4 +256,71 @@ public class MainDriver {
 		
 		
 	}
+        
+        public static void Exercise(){
+            //Instantiate each new product so it is available to be called
+		Product p1 = new Product("BalanceFrom GoYoga All Purpose High Density Non-Slip Exercise Yoga Mat with Carrying Strap",
+			"With double sided non-slip surfaces, BalanceFrom All-Purpose Premium\n" +
+                        "exercise yoga mat comes with an excellent slip resistant advantage to prevent injuries. Exceptional resilience allow you to keep your balance during any exercise style. moisture\n" +
+"resistant technology makes the mat to be easily washed with soap and water. Easy strapping and light weight feature are added to this mat for easy transport and storage", "Regular", 14.97, 1,"Balance from","Exercise");
+		Product p2 = new Product("NFL Supergrip wilson football",
+			"Football is a game of will. Take hold of the game with the NFL Supergrip.\n"
+                                +" Made with a high-performance composite material, this football offers the ideal blend of durability,\n"+
+                                " grip and performance worthy of the official NFL logo and the game's best players; whatever league they play in.\n","Regular",  19.99, 1,"NFL","Exercise");
+		Product p3 = new Product("Nike Gyakusou" , "The Nike Gyakusou Men's Shorts features a 2-in-1 design with a woven outer short and a compression layer underneath for supportive comfort.","Regular", 110, 3,"Nike","Exercise");
+		Product p4 = new Product("Fitness Tracker HR" , "  Fashion design and comfortable material, all these assure that you can wear it comfortably at any time and any where. No matter you are walking, running or climbing.Its really the best partner for sports enthusiast.\n","With Belt" ,19.99, 1, " Diggro ","Exercise");
+		Product p5 = new Product("Saucony Grid Cohesion 10 Road Running Shoe (Men's)" , 
+			" This flexible, athletic shoe for men offers stable cushioning with its Heel Grid system. An injection-molded EVA midsole delivers underfoot cushioning, and a mesh upper provides breathability.", "Running",
+			40.95, 3," Saucony","Exercise");
+		
+		//Calls OptionMenu and passes each newly instantiated object so that users can see more details
+		OptionsMenu(p1, p2, p3, p4, p5);
+		
+        }
+        public static void Outdoor(){
+                       //Instantiate each new product so it is available to be called
+            Product p1 = new Product("TIKI 4-Pack 57-in Bamboo Garden Torch","Natural flame outdoor torches help set the mood and add fun, decor and ambiance to your backyard or patio. Easy-to-use bamboo torches bring a touch of relaxed style and flare to any outdoor patio space.", "Regular",12.99 , 1,"TIKI","Outdoor");
+            Product p2 = new Product("Colorescience Sunforgettable Total Protection Brush-On Shield SPF 50 - Tan","Protect your skin from sun and pollution with Colorescience Sunforgettable Total Protection Brush-On Shield SPF 50", "100% mineral sunscreen brush",60.00 , 1,"ColorScience","Outdoor");
+            Product p3 = new Product("Trademark Tools 7-in-1 Plant Care Garden Tool Set","Make your green thumb grow with this 7-in-1 plant care", "garden tool set",12.99 , 1,"TM","Outdoor");
+            Product p4 = new Product("Master craft boat cover","Cover your MasterCraft X-15 or MariStar 215 with Zero Flex Flyer Wakeboard Tower with this premium factory\n" +
+            "cover with this MasterCraft boat cover. This MasterCraft boat cover uses a ratchet strap system to gently hug just below the rubrail of your boat ensuring a perfect fit that is safe for storage on or off the trailer ", "Off trailer",1294.99 , 1,"Mastercraft","Outdoor");
+            Product p5 = new Product("Expert Grill Heavy Duty 24-Inch Charcoal Grill","The Expert Grill Heavy Duty 24-Inch Charcoal Grill was designed for those passionate about grilling. With a 372 square inch cooking surface, it has enough space to grill 20 burgers at the same time. This heavy-duty charcoal grill is also jam packed with extra features like the adjustable charcoal pan, plus a foldable side shelf for handling plates, dishes and condiments.", "372 sq inches",80.99 , 1,"The Expert Grill","Outdoor");
+            //Calls OptionMenu and passes each newly instantiated object so that users can see more details
+		OptionsMenu(p1, p2, p3, p4, p5);
+		
+        }
+        public static void Kitchen(){
+                       //Instantiate each new product so it is available to be called
+            Product p1 = new Product("Cuisinart 635-24 Chef's Classic Nonstick Hard-Anodized 3-Quart Chef's Pan with Cover",
+                    "Hard Anodized Exterior-Dense and Highly Wear Resistant\n" +
+                    "Quantanium Nonstick Cooking Surface for Professional Results\n" +
+                    "Riveted Stainless handles\n" +
+                    "Tempered Class Lids", "Cookware set",22.99 , 1,"Cuisinart","Kitchen ");
+            Product p2 = new Product("AmazonBasics 6-Piece Nonstick Bakeware Set",
+                    "6-piece bakeware set includes a 9x5-inch loaf pan, 2 round 9-inch cake pans, a 12-cup muffin pan, a 13x9-inch roast pan, and a 13x9-inch baking sheet\n" +
+                    "Made of heavy-weight carbon steel for thorough, even heating\n" +
+                    "Nonstick coating for effortless food release and easy cleaning\n" +
+                    "Oven-safe to 500 degrees F\n" +
+                    "Hand-wash only recommended", "Bakeware set",15.99 , 1,"AmazonBasics","Kitchen ");
+            Product p3 = new Product("Aroma Housewares 8-Cup (Cooked) (4-Cup UNCOOKED) Digital Rice Cooker and Food Steamer (ARC-914D)",
+                    "Perfectly prepares 2 to 8 cups of any variety of cooked rice\n" +
+                    "Steams meat and vegetables while rice cooks below\n" +
+                    "Easy-to-use, programmable digital controls with automatic Keep-Warm and White Rice and Brown Rice functions", "white",25.99 , 1,"Aroma Housewares","Kitchen ");
+            Product p4 = new Product("LG LMV2031ST Stainless Steel Over-the-Range Microwave",
+                    "1,000 Cooking Watts\n" +
+                    "400 CFM Venting System\n" +
+                    "Sensor Cooking\n" +
+                    "EasyClean\n" +
+                    "Energy Savings Key", "2.0 Cu. Ft.",259.99 , 1,"LG","Kitchen ");
+            Product p5 = new Product("Hamilton Beach Classic Chrome 4 Slice Toaster (24790)",
+                    "Lifts slices higher with toast boost\n" +
+                    "Cool touch exterior\n" +
+                    "Auto shutoff\n" +
+                    "Extra-wide slots\n" +
+                    "Toast boost", "4 Slice",33.99 , 1,"Hamilton Beach","Kitchen ");
+            
+            //Calls OptionMenu and passes each newly instantiated object so that users can see more details
+		OptionsMenu(p1, p2, p3, p4, p5);
+	
+        }
 }
