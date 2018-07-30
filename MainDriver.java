@@ -166,31 +166,55 @@ public class MainDriver {
 		p1 = p1;
 		int quantity;
 		Scanner scan = new Scanner(System.in);
-
+                
+                boolean correctAnswer = false; //while loop control variable
+                
+                int buyProduct;
+                
 		//Displays the finer details of the product
 		System.out.println("Product Name : " + p1.getName() + "\n");
-        System.out.println("Desciption : " + p1.getDescription() + "\n");
-        System.out.println("Size : " + p1.getSize() + "\n");
-        System.out.println("Price : $" + p1.getPrice() + "\n");
-        System.out.println("Quantity : " + p1.getQuantity() + "\n");
-        System.out.println("Seller : " + p1.getSellerName());
-        System.out.println("Category : " + p1.getCategory());
+                System.out.println("Desciption : " + p1.getDescription() + "\n");
+                System.out.println("Size : " + p1.getSize() + "\n");
+                System.out.println("Price : $" + p1.getPrice() + "\n");
+                System.out.println("Quantity : " + p1.getQuantity() + "\n");
+                System.out.println("Seller : " + p1.getSellerName());
+                System.out.println("Category : " + p1.getCategory());
+                
+                while(correctAnswer != true){
+                    scan.nextLine();
+                    System.out.print("Do you want to buy this product? (Enter 1 to continue or enter 2 to go back to main menu) : ");
+                    buyProduct = scan.nextInt();
+                    
+                    if(buyProduct == 1){
+                         System.err.print("Enter the number of quantity you need : " );
         
-        System.out.print("Enter your shipping address : ");
+                         quantity = scan.nextInt();
         
-        String shippingAddress;
+                          p1.setQuantity(quantity);
+        
+        
+                          Cart c1 = new Cart(p1.getName(),"none", p1.getQuantity(), p1.getPrice());
+                          correctAnswer = true;
+                          System.err.println(correctAnswer + " in yes");
+                    } 
+                    else if(buyProduct == 2){
+                        //Return to main menu
+                        dir();
+                        correctAnswer = true;
+                    }
+                    else{
+                        System.err.println("Something went wrong please try again.\n");
+                       // correctAnswer = false;
+                    }
+                }
+                
+                System.out.print("Enter your shipping address : ");
+        
+        /*String shippingAddress;
         
         shippingAddress = scan.nextLine();
         
-        System.err.print("Enter the number of quantity you need : " );
-        
-        quantity = scan.nextInt();
-        
-        p1.setQuantity(quantity);
-        
-        
-        Cart c1 = new Cart(p1.getName(),shippingAddress, p1.getQuantity(), p1.getPrice());
-        
+       
         System.out.println("\n\nName of product in cart : " + c1.getName());
         System.out.println("Shipping Address : " + c1.getShippingAdress());
         System.out.println("=============================================");
@@ -204,7 +228,8 @@ public class MainDriver {
       DecimalFormat fmt = new DecimalFormat("0.##");
         System.err.println("Final amount due : $" + fmt.format(c1.finalPrice()));
         System.err.println("---------------------------------------------");
-		//Calls continue method to ask the user if they would like to continue shopping after a purchase
+	*/
+        //Calls continue method to ask the user if they would like to continue shopping after a purchase
 		Continue();
 	}
 	
