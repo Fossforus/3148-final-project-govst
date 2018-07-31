@@ -48,6 +48,7 @@ public class MainDriver {
 				switch (choice) {
 				
 				case 0: Goodbye();
+		    correctChoice = true;	
 					break;
 					
 				case 1: System.out.println("Electronics");
