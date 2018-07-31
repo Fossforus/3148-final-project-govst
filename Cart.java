@@ -4,7 +4,7 @@
 
 public class Cart
 {
-  private boolean transactionSuccessful; //To check if the product is successfully purchased.
+  
   String productName,shippingAddress;   //Name of the product bought and the shipping address.
   double price,shippingPrice,tax,finalPrice;    //The price of the product, shipping price, tax and the final price.
   int quantity;         //How many products are bought.
@@ -13,13 +13,15 @@ public class Cart
 
 
   //Constructor of class cart.
-  public Cart(String newProductName, String newShippingAddress, int newQuantity, double newPrice)
+  public Cart(String newProductName, String newShippingAddress, int newQuantity, double newPrice, double newCredit, int newExpiration, int newCVV)		
 {
   productName = newProductName;     //assigning the name of the product.
     shippingAddress = newShippingAddress;       //      Update the shipping address
     quantity = newQuantity;                 //Set the number of quantities for user to buy.
     price = newPrice;
-  transactionSuccessful = false;
+    creditCardNumber = newCredit;
+	expirationMonthandYear = newExpiration;		
+	cvv = newCVV;
 }
 
 
@@ -35,9 +37,21 @@ public class Cart
     cvv=newCvv;
 }
 
+public double getCreditCard(){
+	return creditCardNumber;
+}
+
 public String getName(){
     return productName;
-}  
+}
+
+public int getExpiration(){
+	return   expirationMonthandYear;
+}
+
+public int getCVV(){
+	return cvv;
+}
 
 public String getShippingAdress(){
     return shippingAddress;
