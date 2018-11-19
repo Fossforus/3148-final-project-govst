@@ -1,0 +1,8 @@
+Name of DVD
+Genre
+Language
+Description
+Price
+Is it a 3D? Blue-Ray? 
+
+System Requirement(if it is a PC game DVD)
