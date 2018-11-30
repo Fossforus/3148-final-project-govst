@@ -175,66 +175,76 @@ def displayTotalwithTax(total):
     print("Your subtotal: %.2f$" %(total))
     print("Your tax: %.2f$" %(tax))
     print("Your total: %.2f$" %(grand_total))
-    choice = input("Proced to main menu?(Y/N)")
+    choice = input("Confirm Purchase? Y or N:")
     if choice == 'Y' or 'y':
-        mainMenu()     
+        print('Transaction successful')
+
+        nestedChoice = input('Do you want to continue shopping or exit? Main Menu (M), Exit(X):')
+
+        if nestedChoice == 'X' or 'x':
+            exit()
+        elif nestedChoice == 'M' or 'm':
+            mainMenu()
+        else:
+            print('Something went wrong, restarting')
+            mainMenu()
+    elif choice == 'n' or 'N':
+        print('Transaction Cancelled! \t proceeding to Main menu.')
+        mainMenu()
+        
 
 class Cart:
     def __init__(self):
-        self._products = []
+        self.products = []
 
     def addItem(self,quantity):
-        self._products.append(quantity)
+        self.products.append(quantity)
         
     def getTotal(self):
         total = 0
         price = 0
         
         
-        for it in self._products:
+        for it in self.products:
             print("Name:",it.name,"\nQuantity:",it.quantity,"\nPrice:$",it.price,"\n\n")
-            
             pric = float(it.price)
             quant = float(it.quantity)
             total = total + (pric * quant)
-            
-
             print("Total from cart:",pric,quant,total)
         return total
 
     def getNumItems(self):
         count = 0
-        for c in self._products:
+        for c in self.products:
             count = count + 1
         return count
-    def removeItem(self, name):
+    def removeItem(self,name):
     #removes the item from the cart's item Products
-        for it in self._products:
+        for it in self.products:
             if name == it.name:
                 self._products.remove(it)
     def list_cart_items(self):
+        total = 0
         print("Items available in your shopping cart:")
-        for it in self._products:
-            print("Name:",it.name,"\nQuantity:",it.quantity,"\nPrice:$",it.price,"\n\n")
+        for it in self.products:
+            currentTotal = format((float(it.quantity))*(float(it.price)),'.2f')
+            print("\nName:",it.name,"\nQuantity:",it.quantity,"\nPrice:$",it.price,"\nTotal: $",currentTotal,"\n\n")
             #print("%s %i"%(it.name,it.quantity))
+            total = total + float(currentTotal)
+            
+        print('Total for all items: $',total)
+        
+        choice = input("Enter your choice Checkout (C), Main menu(M), exit (X) :")
 
-        choice = input("Proced to main menu?(Y/N) Enter 'N' to get total")
-        if choice == 'Y' or 'y':
-            mainMenu()    
-        elif choice == 'N' or 'n':
-            for it in self._products:
-                print("Name:",it.name,"\nQuantity:",it.quantity,"\nPrice:$",it.price,"\n\n")
-                
-                pric = float(it.price)
-                quant = float(it.quantity)
-                total = total + (pric * quant)
-                
-                print("Total from cart:",pric,quant,total)
-                choice = input("Proced to main menu?(Y/N)")
-                if choice == 'Y' or 'y':
-                    mainMenu() 
-        else:
+        if choice == 'C' or 'c':
+            displayTotalwithTax(total)
+        elif choice == 'M' or 'm':
+            mainMenu()
+        elif choice == 'X' or 'x':
             exit()
+        else:
+            print('Something went wrong, Proceeding to Main Menu')
+            mainMenu()
                 
 class Quantity:
         # Initialize the function and its attributes
