@@ -218,6 +218,7 @@ def displayTotalwithTax(total):
             mainMenu()
             choiceIsValid = True
 
+#Holds multiple items until user uses commit to purchase or rollback to cancel transcation.
 class Cart:
     def __init__(self):
         self.products = []
@@ -271,7 +272,9 @@ class Cart:
             elif choice.lower() =='x':
                 choiceIsValid = True
                 exit()
-                    
+
+
+#To get quantity of dvd to be added to the cart     
 class Quantity:
         # Initialize the function and its attributes
     def __init__(self, name, quantity,price):
@@ -288,7 +291,7 @@ class Quantity:
     def getPrice(self):
         return self.price
 
-# Create a class called Item with two data attributes (name, price)  
+# Create a class called Item with data attributes (id,name, price,description,rating,type)  
 class Item:
     
     # Initialize the function and its attributes
@@ -337,7 +340,7 @@ class Item:
         self.__dvdType = dvdType
         
 def loadDataToItemClass():
-    
+     #Loads the data from Database and holds in the Item object.
     
     conn = pymysql.connect(host='localhost',user='root',password='P@$$w0rd',db='test')
 
@@ -358,6 +361,8 @@ def loadDataToItemClass():
         item1.setRating(r)
         item1.setDvdType(t)
         all_items.append(item1)
+
+        #For Debug:
         #print('-------------------------------------------------------')
         #print('DVD ID:' , item1.getID())
         #print('\nName of DVD:',item1.getName())
@@ -371,12 +376,12 @@ def exit():
     
 def main():
 
-    loadDataToItemClass()
-    #createTable()
-    #addNewDVD()
-    #countrow()
-    #deleteRow()
-    mainMenu()
+    loadDataToItemClass()       #Loads the data from Database and holds in the Item object.
+    #createTable()              #Creates a new table in the database(for future enhancements)
+    #addNewDVD()                #Add a new record, A new DVD to the database and also available for customers.
+    #countrow()                 #For debugging process. Prints everything from the database
+    #deleteRow()                #Delete a record, Delete a DVD from the database.
+    mainMenu()                  #Prompt the user to main screen on the project.
     
     
 main()
