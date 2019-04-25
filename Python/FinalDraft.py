@@ -181,6 +181,7 @@ def mainMenu():
                     getDVDNameAndPrice()
                     choiceIsValid = True
                 elif choice == 4:
+                    c.list_cart_items()
                     name = input("Enter the name of the item to remove from cart: ")
                     c.removeItem(name)
                     choiceIsValid = True
@@ -249,6 +250,8 @@ class Cart:
         for it in self.products:
             if name == it.name:
                 self._products.remove(it)
+            else:
+                print("item ", name, "not found")
     def list_cart_items(self):
         total = 0
         print("Items available in your shopping cart:")

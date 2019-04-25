@@ -162,10 +162,11 @@ def mainMenu():
                 choiceIsValid = True #flag to exit loop
                 exit()
             elif choice == 1:
+                getDVDNameAndPrice()
                 choiceIsValid = True
                 #list_all_items()
                 #Delete the code above
-                getDVDNameAndPrice()
+                
             elif choice == 2:
                 choiceIsValid = True
                 c.list_cart_items()
